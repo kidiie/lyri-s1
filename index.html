@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lyri’s Accessories — Earrings Catalog</title>
+  <meta name="description" content="Lyri’s Accessories — Shop beautiful earrings. Browse the catalog and order easily via WhatsApp." />
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#131321;
+      --card2:#17172a;
+      --text:#f4f4ff;
+      --muted:rgba(244,244,255,.72);
+      --accent:#ff3d8a;
+      --accent2:#7c5cff;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(124,92,255,.30), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(255,61,138,.25), transparent 60%),
+        radial-gradient(800px 500px at 50% 100%, rgba(255,61,138,.12), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,11,16,.82), rgba(11,11,16,.50));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:14px;}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+    .logo{
+      width:40px;height:40px;border-radius:14px;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent2));
+      box-shadow: 0 10px 25px rgba(255,61,138,.20);
+      position:relative;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:10px;
+      border-radius:12px;
+      background: rgba(255,255,255,.18);
+      transform: rotate(20deg);
+    }
+    .brand h1{font-size:15px; margin:0; letter-spacing:.5px;}
+    .brand small{display:block; color:var(--muted); margin-top:2px; font-size:12px}
+    .navlinks{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.10);
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+      transition:.2s transform, .2s background;
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(255,61,138,.95), rgba(124,92,255,.95));
+      border: 0;
+      box-shadow: 0 16px 40px rgba(255,61,138,.22);
+    }
+    .hero{padding:42px 0 18px;}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .heroGrid{grid-template-columns: 1fr;} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroMain{padding:22px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,61,138,.12);
+      border: 1px solid rgba(255,61,138,.25);
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:.3px;
+    }
+    .title{margin:14px 0 10px; font-size:42px; line-height:1.08; letter-spacing:-.5px;}
+    @media (max-width: 520px){ .title{font-size:34px} }
+    .subtitle{margin:0 0 18px; color:var(--muted); font-size:15px; line-height:1.6; max-width:56ch;}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .heroStats{display:grid; grid-template-columns: 1fr 1fr; gap:10px; padding:18px;}
+    .stat{
+      background: rgba(19,19,33,.70);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding:14px;
+    }
+    .stat b{display:block; font-size:16px}
+    .stat span{color:var(--muted); font-size:12px}
+    .sectionTitle{display:flex; align-items:end; justify-content:space-between; gap:12px; margin:26px 0 12px;}
+    .sectionTitle h2{margin:0; font-size:18px}
+    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
+    .controls{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr .6fr;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    @media (max-width: 900px){ .controls{grid-template-columns: 1fr;} }
+    .field{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding:10px 12px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .field input, .field select{
+      width:100%;
+      background: transparent;
+      border:0;
+      color: var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    .field select option{color:#111}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 1050px){ .grid{grid-template-columns: repeat(3, 1fr);} }
+    @media (max-width: 760px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 420px){ .grid{grid-template-columns: 1fr;} }
+
+    .product{
+      background: rgba(19,19,33,.70);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      overflow:hidden;
+      transition: .18s transform, .18s border-color, .18s background;
+      display:flex; flex-direction:column;
+    }
+    .product:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,61,138,.35);
+      background: rgba(23,23,42,.85);
+    }
+    .thumb{
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, rgba(255,61,138,.22), rgba(124,92,255,.18));
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+    .badge{
+      position:absolute; top:10px; left:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,255,255,.14);
+      font-size:12px; font-weight:700;
+    }
+    .pbody{padding:12px; display:flex; flex-direction:column; gap:10px; flex:1}
+    .pname{margin:0; font-size:14px; letter-spacing:.2px}
+    .pmeta{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .price{font-weight:900}
+    .muted{color:var(--muted); font-size:12px}
+    .row{display:flex; gap:8px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      cursor:pointer;
+      font-weight:800;
+      font-size:13px;
+      text-decoration:none;
+      transition:.18s transform, .18s background;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .btn.whatsapp{
+      border:0;
+      background: linear-gradient(135deg, rgba(48,209,88,.95), rgba(34,197,94,.85));
+      color:#08140b;
+    }
+    .btn.details{
+      background: linear-gradient(135deg, rgba(255,61,138,.85), rgba(124,92,255,.80));
+      border:0;
+    }
+    .footer{
+      margin:26px 0 40px;
+      padding:16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.6;
+    }
+
+    /* Modal */
+    .modalOverlay{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.62);
+      display:none;
+      align-items:center; justify-content:center;
+      padding:18px;
+      z-index:100;
+    }
+    .modal{
+      width:min(980px, 100%);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(19,19,33,.98), rgba(12,12,18,.98));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 30px 90px rgba(0,0,0,.60);
+      overflow:hidden;
+    }
+    .modalGrid{display:grid; grid-template-columns: 1fr 1fr;}
+    @media (max-width: 860px){ .modalGrid{grid-template-columns: 1fr} }
+    .modalImg{
+      min-height: 320px;
+      background: rgba(255,255,255,.06);
+      display:grid; place-items:center;
+      position:relative;
+    }
+    .modalImg img{width:100%; height:100%; object-fit:cover; display:block}
+    .close{
+      position:absolute; top:12px; right:12px;
+      width:42px; height:42px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.35);
+      color: var(--text);
+      cursor:pointer;
+      font-weight:900;
+    }
+    .modalBody{padding:18px}
+    .modalBody h3{margin:0 0 6px; font-size:20px}
+    .modalBody .desc{color:var(--muted); line-height:1.6; margin:0 0 14px}
+    .kv{display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:14px;}
+    .kv .box{
+      padding:12px;
+      border-radius:18px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .kv .box b{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
+    .kv .box span{font-weight:900}
+    .note{margin-top:10px; font-size:12px; color: var(--muted); line-height:1.6;}
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Lyri’s Accessories</h1>
+          <small>Earrings • TZS prices • WhatsApp order</small>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a class="pill" href="#catalog">Catalog</a>
+        <a class="pill" href="#about">About</a>
+        <a class="pill primary" id="navWhatsApp" href="#">Order on WhatsApp 💬</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="top" class="wrap hero">
+    <div class="heroGrid">
+      <section class="card heroMain">
+        <span class="kicker">✨ Cute earrings • Affordable • Clean style</span>
+        <h2 class="title">Lyri’s Accessories 💎</h2>
+        <p class="subtitle">
+          Browse the catalog, tap a product, and order instantly via WhatsApp.
+          Most items are around <b>5,000 TZS</b> 💸
+        </p>
+        <div class="ctaRow">
+          <a class="pill primary" href="#catalog">Shop Catalog 🛍️</a>
+          <button class="pill" id="btnClearFilters">Clear Filters ✨</button>
+        </div>
+      </section>
+
+      <aside class="card heroStats">
+        <div class="stat"><b>Prices in TZS</b><span>Affordable options around 5,000</span></div>
+        <div class="stat"><b>Fast Order</b><span>WhatsApp message auto-fills</span></div>
+        <div class="stat"><b>Custom Requests</b><span>Color + style + budget</span></div>
+        <div class="stat"><b>Delivery</b><span>Meetup / courier / pickup</span></div>
+      </aside>
+    </div>
+
+    <div class="sectionTitle" id="catalog">
+      <div>
+        <h2>Catalog (Products)</h2>
+        <p>Search + filter then tap <b>Order</b> ✅</p>
+      </div>
+      <p class="muted" id="resultsText"></p>
+    </div>
+
+    <div class="controls">
+      <div class="field">🔎 <input id="searchInput" type="search" placeholder="Search... (e.g., hoops, studs, pearls)" /></div>
+      <div class="field">🧷
+        <select id="categorySelect">
+          <option value="all">All Categories</option>
+          <option value="Hoops">Hoops</option>
+          <option value="Studs">Studs</option>
+          <option value="Drops">Drops</option>
+          <option value="Statement">Statement</option>
+        </select>
+      </div>
+      <div class="field">💰
+        <select id="sortSelect">
+          <option value="featured">Sort: Featured</option>
+          <option value="priceLow">Price: Low → High</option>
+          <option value="priceHigh">Price: High → Low</option>
+          <option value="nameAZ">Name: A → Z</option>
+        </select>
+      </div>
+    </div>
+
+    <section class="grid" id="productGrid" aria-label="Product catalog"></section>
+
+    <div class="sectionTitle" id="about" style="margin-top:28px">
+      <div>
+        <h2>About</h2>
+        <p>Simple ordering, fast replies 💬</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <b>Lyri’s Accessories</b> — earrings for every vibe.
+      <br/><br/>
+      <b>How to order:</b> pick an item → tap <b>Order on WhatsApp</b> → send quantity + location.
+      <br/>
+      <span class="note">WhatsApp set to: <b>0762061963</b> ✅</span>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modalOverlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="modal">
+      <div class="modalGrid">
+        <div class="modalImg">
+          <button class="close" id="modalClose" aria-label="Close">✕</button>
+          <img id="modalImg" alt="Product image" />
+        </div>
+        <div class="modalBody">
+          <h3 id="modalName">Product</h3>
+          <p class="desc" id="modalDesc"></p>
+
+          <div class="kv">
+            <div class="box"><b>Price</b><span id="modalPrice">—</span></div>
+            <div class="box"><b>Category</b><span id="modalCat">—</span></div>
+          </div>
+
+          <div class="row">
+            <a class="btn whatsapp" id="modalOrder" href="#" target="_blank" rel="noopener">Order on WhatsApp 💬</a>
+            <button class="btn" id="modalCopy">Copy Details 📋</button>
+          </div>
+
+          <p class="note">Tip: tell us <b>color</b>, <b>quantity</b>, and your <b>location</b>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // WhatsApp number converted to international format (Tanzania +255)
+    const WHATSAPP_NUMBER = "255762061963";
+
+    // Catalog: edit these anytime (set image: "images/p1.jpg" etc.)
+    const products = [
+      { id:"LYR-001", name:"Mini Heart Studs", category:"Studs", price:5000, bestSeller:true,  desc:"Cute heart studs — small, charming, and gift-friendly.", image:"" },
+      { id:"LYR-002", name:"Classic Small Hoops", category:"Hoops", price:5000, bestSeller:true,  desc:"Lightweight hoops for daily wear. Clean and classy.", image:"" },
+      { id:"LYR-003", name:"Pearl Studs", category:"Studs", price:5000, bestSeller:false, desc:"Soft luxury look — minimal and timeless.", image:"" },
+      { id:"LYR-004", name:"Crystal Drops", category:"Drops", price:7000, bestSeller:true,  desc:"Sparkly drops that catch light — perfect for events.", image:"" },
+      { id:"LYR-005", name:"Butterfly Studs", category:"Studs", price:5000, bestSeller:false, desc:"Pretty butterfly studs — cute and trendy.", image:"" },
+      { id:"LYR-006", name:"Statement Black & Silver", category:"Statement", price:9000, bestSeller:false, desc:"Bold modern piece — instant attention 😮‍💨", image:"" },
+      { id:"LYR-007", name:"Gold Twist Hoops", category:"Hoops", price:7000, bestSeller:false, desc:"Twist texture for a premium look.", image:"" },
+      { id:"LYR-008", name:"Star Drops", category:"Drops", price:5000, bestSeller:false, desc:"Star-themed drops — light and playful.", image:"" }
+    ];
+
+    const money = (n) => "TZS " + Number(n).toLocaleString("en-US");
+
+    const placeholderSvg = (label) => {
+      const safe = String(label || "Lyri’s").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop stop-color="rgba(255,61,138,0.38)" offset="0"/>
+              <stop stop-color="rgba(124,92,255,0.28)" offset="1"/>
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#g)"/>
+          <circle cx="610" cy="140" r="110" fill="rgba(255,255,255,0.10)"/>
+          <circle cx="180" cy="450" r="140" fill="rgba(255,255,255,0.07)"/>
+          <text x="50%" y="48%" text-anchor="middle" font-size="44" fill="rgba(255,255,255,0.92)" font-family="system-ui, -apple-system, Segoe UI, Roboto">
+            ${safe}
+          </text>
+          <text x="50%" y="58%" text-anchor="middle" font-size="18" fill="rgba(255,255,255,0.65)" font-family="system-ui, -apple-system, Segoe UI, Roboto">
+            Add a product image
+          </text>
+        </svg>`;
+      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+    };
+
+    const makeWhatsAppLink = (p) => {
+      const msg =
+        `Hi Lyri’s Accessories! 💎\n` +
+        `I want to order:\n` +
+        `• ${p.name} (${p.id})\n` +
+        `• Price: ${money(p.price)}\n` +
+        `• Quantity: 1\n` +
+        `My location: ____\n` +
+        `Color preference (optional): ____`;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    };
+
+    const grid = document.getElementById("productGrid");
+    const resultsText = document.getElementById("resultsText");
+    const searchInput = document.getElementById("searchInput");
+    const categorySelect = document.getElementById("categorySelect");
+    const sortSelect = document.getElementById("sortSelect");
+
+    function getFiltered(){
+      const q = (searchInput.value || "").toLowerCase().trim();
+      const cat = categorySelect.value;
+
+      let list = products.filter(p => {
+        const matchesQ =
+          !q ||
+          p.name.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          (p.id || "").toLowerCase().includes(q);
+        const matchesCat = (cat === "all") || (p.category === cat);
+        return matchesQ && matchesCat;
+      });
+
+      const sort = sortSelect.value;
+      if(sort === "priceLow") list.sort((a,b)=>a.price-b.price);
+      if(sort === "priceHigh") list.sort((a,b)=>b.price-a.price);
+      if(sort === "nameAZ") list.sort((a,b)=>a.name.localeCompare(b.name));
+      if(sort === "featured") list.sort((a,b)=> (b.bestSeller - a.bestSeller) || a.name.localeCompare(b.name));
+
+      return list;
+    }
+
+    function render(){
+      const list = getFiltered();
+      resultsText.textContent = `${list.length} item(s)`;
+
+      grid.innerHTML = list.map(p => {
+        const img = p.image && p.image.trim() ? p.image.trim() : placeholderSvg(p.name);
+        return `
+          <article class="product" data-id="${p.id}">
+            <div class="thumb">
+              <img src="${img}" alt="${p.name}" loading="lazy" onerror="this.src='${placeholderSvg(p.name)}'">
+              <span class="badge">${p.category}${p.bestSeller ? " • ⭐" : ""}</span>
+            </div>
+            <div class="pbody">
+              <h3 class="pname">${p.name}</h3>
+              <div class="pmeta">
+                <span class="price">${money(p.price)}</span>
+                <span class="muted">${p.id}</span>
+              </div>
+              <div class="row">
+                <button class="btn details" data-id="${p.id}">Details ✨</button>
+                <a class="btn whatsapp" href="${makeWhatsAppLink(p)}" target="_blank" rel="noopener">Order 💬</a>
+              </div>
+              <div class="muted">${p.desc}</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      grid.querySelectorAll("button.details").forEach(btn => {
+        btn.addEventListener("click", () => openModal(btn.dataset.id));
+      });
+    }
+
+    // Modal
+    const overlay = document.getElementById("modalOverlay");
+    const modalClose = document.getElementById("modalClose");
+    const modalImg = document.getElementById("modalImg");
+    const modalName = document.getElementById("modalName");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalCat = document.getElementById("modalCat");
+    const modalOrder = document.getElementById("modalOrder");
+    const modalCopy = document.getElementById("modalCopy");
+    let current = null;
+
+    function openModal(id){
+      const p = products.find(x => x.id === id);
+      if(!p) return;
+      current = p;
+
+      modalName.textContent = `${p.name} (${p.id})`;
+      modalDesc.textContent = p.desc;
+      modalPrice.textContent = money(p.price);
+      modalCat.textContent = p.category;
+      modalOrder.href = makeWhatsAppLink(p);
+
+      const img = p.image && p.image.trim() ? p.image.trim() : placeholderSvg(p.name);
+      modalImg.src = img;
+      modalImg.onerror = () => { modalImg.src = placeholderSvg(p.name); };
+
+      overlay.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(){
+      overlay.style.display = "none";
+      document.body.style.overflow = "";
+      current = null;
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    overlay.addEventListener("click", (e) => { if(e.target === overlay) closeModal(); });
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape" && overlay.style.display === "flex") closeModal(); });
+
+    modalCopy.addEventListener("click", async () => {
+      if(!current) return;
+      const text =
+        `Lyri’s Accessories Order\n` +
+        `${current.name} (${current.id})\n` +
+        `Category: ${current.category}\n` +
+        `Price: ${money(current.price)}\n` +
+        `Quantity: __\n` +
+        `Location: __\n` +
+        `Color: __`;
+      try{
+        await navigator.clipboard.writeText(text);
+        modalCopy.textContent = "Copied ✅";
+        setTimeout(()=> modalCopy.textContent = "Copy Details 📋", 1200);
+      }catch{
+        alert("Copy failed. You can manually copy the details.");
+      }
+    });
+
+    // Nav WhatsApp (general message)
+    document.getElementById("navWhatsApp").addEventListener("click", (e) => {
+      e.preventDefault();
+      const msg = `Hi Lyri’s Accessories! 💎 I’d like to order earrings. Please share the latest catalog.`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    });
+
+    document.getElementById("btnClearFilters").addEventListener("click", () => {
+      searchInput.value = "";
+      categorySelect.value = "all";
+      sortSelect.value = "featured";
+      render();
+      window.location.hash = "#catalog";
+    });
+
+    searchInput.addEventListener("input", render);
+    categorySelect.addEventListener("change", render);
+    sortSelect.addEventListener("change", render);
+
+    render();
+  </script>
+</body>
+</html>
